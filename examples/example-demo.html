@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Components Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    section {
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero {
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .cards-section {
+      background-color: #fff;
+    }
+    
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+    }
+    
+    .parallax-section {
+      position: relative;
+      overflow: hidden;
+      background-color: #232323;
+      color: white;
+    }
+    
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      background-image: url('https://via.placeholder.com/1920x1080');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+    
+    .parallax-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      color: white;
+      text-align: center;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: #fff;
+      color: #6366F1;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1 class="fade-up">GSAP Components</h1>
+    <p class="fade-up">A collection of ready-to-use GSAP animations for modern web projects</p>
+    <a href="#" class="btn fade-up">Get Started</a>
+  </section>
+  
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <h2 class="fade-up">Featured Components</h2>
+    <div class="cards-container">
+      <div class="card fade-cards">
+        <h3>Scroll Animations</h3>
+        <p>Trigger animations when elements come into view</p>
+      </div>
+      <div class="card fade-cards">
+        <h3>Text Effects</h3>
+        <p>Beautiful typography animations for any website</p>
+      </div>
+      <div class="card fade-cards">
+        <h3>Parallax Effects</h3>
+        <p>Create depth with parallax scrolling elements</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Parallax Section -->
+  <section class="parallax-section">
+    <div class="parallax-bg"></div>
+    <div class="parallax-content">
+      <h2 class="fade-up">Stunning Visual Effects</h2>
+      <p class="fade-up">Our components make it easy to create professional animations without writing complex code</p>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2 class="fade-up">Ready to Create Amazing Animations?</h2>
+    <p class="fade-up">Start building beautiful interfaces today</p>
+    <a href="#" class="btn fade-up">Download Now</a>
+  </section>
+  
+  <!-- Include GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+  <!-- Include your components -->
+  <script src="../components/animations/scroll-effects.js"></script>
+  
+  <!-- Initialize animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize fade ups
+      new GsapComponents.ScrollFadeIn('.fade-up', {
+        y: 30,
+        stagger: 0.15
+      });
+      
+      // Initialize cards with different settings
+      new GsapComponents.ScrollFadeIn('.fade-cards', {
+        y: 50,
+        stagger: 0.2,
+        start: "top 75%"
+      });
+      
+      // Initialize parallax effect
+      new GsapComponents.ParallaxScroll('.parallax-bg', {
+        speed: 0.3
+      });
+    });
+  </script>
+</body>
+</html>
