@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="scroll-behavior: smooth; scroll-padding-top: 70px; overflow: auto;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Portfolio Cards</title>
+    <!-- Link to styles.css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+      <!-- Include Isotope -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+   
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Include GSAP ScrollTrigger plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+ <!-- Include Hammer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</head>
+
+<body class="is--home page--ready" style="overflow: auto; position: relative;">
+    <!-- Our Work -->
+    <section class="c-showcase js-showcase is-comp" data-mg="Click To Explore">
+        <button class="explore-btn js-explore-btn">
+            Explore
+            <img src="assets/images/icons/ArrowRightWhite.svg" alt="right arrow" />
+        </button>
+        <i class="c-cross"></i>
+        <!-- <div class="js-showcase-trigger-marker"></div> -->
+        <i class="overlay overlay-top"></i>
+        <i class="overlay overlay-bottom"></i>
+        <i class="overlay overlay-left"></i>
+        <i class="overlay overlay-right"></i>
+        <h1 class="sc__heading">
+            <span class="type-1">Our</span>&nbsp;<span
+                class="type-1">Work</span>
+        </h1>
+        <h2 class="c-heading">
+            <i class="c-heading-icon"></i>Portfolio Showcase
+        </h2>
+        <p class="bot-txt type-14">We are thrilled to make this awesome section.</p>
+        <a href="/{{lang}}/work/{{version}}" class="main-cta" data-mg="">View All Projects <i
+                class="icon"></i></a>
+        <div class="c-layout-switcher is--dark js-switch-showcase-layout" data-mg="">
+            <input type="checkbox" name="layout_switcher" id="layout-switcher-showcase" />
+            <label for="layout-switcher-showcase" class="layout-switcher">
+                <span class="txt">switch layout</span>
+                <i class="pill"></i>
+                <div class="icon-list"><i></i><i></i><i></i></div>
+                <div class="icon-grid">
+                    <i></i><i></i><i></i><i></i>
+                </div>
+            </label>
+        </div>
+        <div class="c-filter-btn-wh js-showcase-filter-toggle">
+            <span class="txt">All</span>
+            <svg class="icon-arrow" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M13.459 6.35354L8.45901 11.3535C8.41257 11.4 8.35743 11.4369 8.29673 11.4621C8.23603 11.4872 8.17097 11.5002 8.10526 11.5002C8.03955 11.5002 7.97449 11.4872 7.91379 11.4621C7.85309 11.4369 7.79794 11.4 7.75151 11.3535L2.75151 6.35354C2.65769 6.25972 2.60498 6.13247 2.60498 5.99979C2.60498 5.86711 2.65769 5.73986 2.75151 5.64604C2.84533 5.55222 2.97258 5.49951 3.10526 5.49951C3.23794 5.49951 3.36519 5.55222 3.45901 5.64604L8.10526 10.2929L12.7515 5.64604C12.798 5.59958 12.8531 5.56273 12.9138 5.53759C12.9745 5.51245 13.0396 5.49951 13.1053 5.49951C13.171 5.49951 13.236 5.51245 13.2967 5.53759C13.3574 5.56273 13.4126 5.59958 13.459 5.64604C13.5055 5.69249 13.5423 5.74764 13.5675 5.80834C13.5926 5.86904 13.6055 5.93409 13.6055 5.99979C13.6055 6.06549 13.5926 6.13054 13.5675 6.19124C13.5423 6.25193 13.5055 6.30708 13.459 6.35354Z"
+                    fill="#1B1A19"></path>
+            </svg>
+        </div>
+        <div class="overlay-filter js-showcase-filter-toggle"></div>
+        <ul class="c-filter-list" data-mg="">
+            <li data-target="" class="filter-item filter-item--main js-showcase-hover-filter active">
+                Filter By &nbsp;
+                <svg class="lang-arrow" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13.459 6.35354L8.45901 11.3535C8.41257 11.4 8.35743 11.4369 8.29673 11.4621C8.23603 11.4872 8.17097 11.5002 8.10526 11.5002C8.03955 11.5002 7.97449 11.4872 7.91379 11.4621C7.85309 11.4369 7.79794 11.4 7.75151 11.3535L2.75151 6.35354C2.65769 6.25972 2.60498 6.13247 2.60498 5.99979C2.60498 5.86711 2.65769 5.73986 2.75151 5.64604C2.84533 5.55222 2.97258 5.49951 3.10526 5.49951C3.23794 5.49951 3.36519 5.55222 3.45901 5.64604L8.10526 10.2929L12.7515 5.64604C12.798 5.59958 12.8531 5.56273 12.9138 5.53759C12.9745 5.51245 13.0396 5.49951 13.1053 5.49951C13.171 5.49951 13.236 5.51245 13.2967 5.53759C13.3574 5.56273 13.4126 5.59958 13.459 5.64604C13.5055 5.69249 13.5423 5.74764 13.5675 5.80834C13.5926 5.86904 13.6055 5.93409 13.6055 5.99979C13.6055 6.06549 13.5926 6.13054 13.5675 6.19124C13.5423 6.25193 13.5055 6.30708 13.459 6.35354Z"
+                        fill="#1B1A19" />
+                </svg>
+            </li>
+            <li data-target="" class="filter-item js-showcase-filter active">
+                All
+            </li>
+            
+            <li data-target="{{pill.trigger_word}}" class="filter-item js-showcase-filter">
+               Web Development
+            </li>
+
+            <li data-target="{{pill.trigger_word}}" class="filter-item js-showcase-filter">
+             UI / UX Design
+             </li>
+
+             
+            <li data-target="{{pill.trigger_word}}" class="filter-item js-showcase-filter">
+               A.I. Development
+                </li>
+          
+        </ul>
+        <div class="js-drag-inside js-grid-layout">
+            <div class="ourwork-nav-btns js-ourwork-nav-btns">
+                <span class="left-btn js-left-arrow">
+                    <img src="assets/images/icons/ArrowLeftWhite.svg" alt="Left Arrow" />
+                </span>
+                <span class="right-btn js-right-arrow">
+                    <img src="assets/images/icons/ArrowRightWhite.svg" alt="Right Arrow" />
+                </span>
+            </div>
+            <div class="js-drag-this" data-mg="Drag">
+                <ul class="showcase-list-wrap">
+                   
+                    <li class="showcase-list-item js-showcase-item AIDevelopment ">
+                        <div  class="c-portfolio-item"
+                            data-mg="Open Project">
+                            <div class="portfolio-img">
+                                <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="" />
+                            </div>
+                            <div class="portfolio-elements">
+                                <time class="year-number">2023</time>
+                                <ul class="c-pills">
+                                    <li class="c-pill">Web Development</li>
+                                   
+                                </ul>
+                                <div class="portfolio-element-discription">
+                                    <h2 class="project-title">
+                                        Culture Summit  
+                                    </h2>
+                                    <p class="project-text">
+                                        The component includes draggable functionality, responsive design, and visually appealing project cards, making it a modern and user-friendly solution for presenting creative work.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="showcase-list-item js-showcase-item AIDevelopment ">
+                        <div data-href="" class="c-portfolio-item"
+                            data-mg="Open Project">
+                            <div class="portfolio-img">
+                                <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="" />
+                            </div>
+                            <div class="portfolio-elements">
+                                <time class="year-number">2023</time>
+                                <ul class="c-pills">
+                                    <li class="c-pill">Web Development</li>
+                                   
+                                </ul>
+                                <div class="portfolio-element-discription">
+                                    <h2 class="project-title">
+                                        Culture Summit  
+                                    </h2>
+                                    <p class="project-text">
+                                        The component includes draggable functionality, responsive design, and visually appealing project cards, making it a modern and user-friendly solution for presenting creative work.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+
+                    <li class="showcase-list-item js-showcase-item AIDevelopment ">
+                        <div  class="c-portfolio-item"
+                            data-mg="Open Project">
+                            <div class="portfolio-img">
+                                <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="" />
+                            </div>
+                            <div class="portfolio-elements">
+                                <time class="year-number">2023</time>
+                                <ul class="c-pills">
+                                    <li class="c-pill">Web Development</li>
+                                   
+                                </ul>
+                                <div class="portfolio-element-discription">
+                                    <h2 class="project-title">
+                                        Culture Summit  
+                                    </h2>
+                                    <p class="project-text">
+                                        The component includes draggable functionality, responsive design, and visually appealing project cards, making it a modern and user-friendly solution for presenting creative work.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+
+                    <li class="showcase-list-item js-showcase-item AIDevelopment ">
+                        <div  class="c-portfolio-item"
+                            data-mg="Open Project">
+                            <div class="portfolio-img">
+                                <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="" />
+                            </div>
+                            <div class="portfolio-elements">
+                                <time class="year-number">2023</time>
+                                <ul class="c-pills">
+                                    <li class="c-pill">Web Development</li>
+                                   
+                                </ul>
+                                <div class="portfolio-element-discription">
+                                    <h2 class="project-title">
+                                        Culture Summit  
+                                    </h2>
+                                    <p class="project-text">
+                                        The component includes draggable functionality, responsive design, and visually appealing project cards, making it a modern and user-friendly solution for presenting creative work.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   
+                    
+                  
+                </ul>
+            </div>
+        </div>
+        <div class="list-layout js-list-layout" style="pointer-events: none">
+            <div class="c-portfolio-list-container">
+                <div class="js-list-to-filter">
+                    <div class="js-showcase-item ">
+                        <a href="/{{lang}}/{{card.link}}{{version}}" class="c-portfolio-list">
+                            <div class="container">
+                                <div class="c-horizontal-line"></div>
+                                <div class="content-container">
+                                    <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="{{card.title}}"
+                                        class="portfolio-list-img" />
+                                    <div class="portfolio-list-content">
+                                        <time class="year-number">2024</time>
+                                        <h2 class="portfolio-list-heading type-6">
+                                            Culture Summit  
+                                        </h2>
+                                    </div>
+                                    <ul class="c-pills u-only-desktop">
+                                       
+                                        <li class="c-pill">Web Development</li>
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-horizontal-line"></div>
+                            </a>
+                    </div>
+
+                    <div class="js-showcase-item ">
+                        <a href="/{{lang}}/{{card.link}}{{version}}" class="c-portfolio-list">
+                            <div class="container">
+                                <div class="c-horizontal-line"></div>
+                                <div class="content-container">
+                                    <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="{{card.title}}"
+                                        class="portfolio-list-img" />
+                                    <div class="portfolio-list-content">
+                                        <time class="year-number">2024</time>
+                                        <h2 class="portfolio-list-heading type-6">
+                                            Culture Summit  
+                                        </h2>
+                                    </div>
+                                    <ul class="c-pills u-only-desktop">
+                                       
+                                        <li class="c-pill">Web Development</li>
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-horizontal-line"></div>
+                            </a>
+                    </div>
+
+                    <div class="js-showcase-item ">
+                        <a href="/{{lang}}/{{card.link}}{{version}}" class="c-portfolio-list">
+                            <div class="container">
+                                <div class="c-horizontal-line"></div>
+                                <div class="content-container">
+                                    <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="{{card.title}}"
+                                        class="portfolio-list-img" />
+                                    <div class="portfolio-list-content">
+                                        <time class="year-number">2024</time>
+                                        <h2 class="portfolio-list-heading type-6">
+                                            Culture Summit  
+                                        </h2>
+                                    </div>
+                                    <ul class="c-pills u-only-desktop">
+                                       
+                                        <li class="c-pill">Web Development</li>
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-horizontal-line"></div>
+                            </a>
+                    </div>
+
+                    <div class="js-showcase-item ">
+                        <a href="/{{lang}}/{{card.link}}{{version}}" class="c-portfolio-list">
+                            <div class="container">
+                                <div class="c-horizontal-line"></div>
+                                <div class="content-container">
+                                    <img src="assets/images/Homepage-Hero-Banner-2.jpg" alt="{{card.title}}"
+                                        class="portfolio-list-img" />
+                                    <div class="portfolio-list-content">
+                                        <time class="year-number">2024</time>
+                                        <h2 class="portfolio-list-heading type-6">
+                                            Culture Summit  
+                                        </h2>
+                                    </div>
+                                    <ul class="c-pills u-only-desktop">
+                                       
+                                        <li class="c-pill">Web Development</li>
+                                     
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="c-horizontal-line"></div>
+                            </a>
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+    <!-- Link to script.js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
